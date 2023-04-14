@@ -93,41 +93,6 @@ function getTotalTimeByLabel(events) {
   return summaries;
 }
 
-
-// 日付とラベルと合計値から、以下のような2x2の二次元配列を作成する
-//          lable1 label2 label3
-// 2022/1/1 val    val    val
-// 2022/1/2 val    val    val
-function makeOutput(summaries) {
-  const output = [[]];
-
-  // 左上は飛ばす
-  output[0].push(null);
-
-  // // ヘッダ行の追加
-  // for (const label of labels) {
-  //   output[0].push(label);
-  // }
-
-
-for (var eventName in summaries) {
-  output.push([eventName,summaries[eventName]])
-}
-
-
-  // for (date of dates) {
-  //   const row = [];
-  //   const dateKey = dateToString(date);
-  //   row.push(dateKey);
-  //   for (label of labels) {
-  //     const val = summaries[dateKey][label] || null;
-  //     row.push(val);
-  //   }
-    // output.push(row);
-  // }
-  return output;
-}
-
 function myFunction() {
   // 対象年月取得
   const spreadSheet = SpreadsheetApp.getActiveSpreadsheet();
